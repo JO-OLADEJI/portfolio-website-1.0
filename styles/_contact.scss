@@ -1,0 +1,130 @@
+$background-color: #1a1a1a;
+$black: #111111;
+$green-tone: #00E676;
+$orange-tone: #FF5722;
+
+.contact-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    // background-color: rgb(0, 224, 112);
+    background-color: #1a1a1a;
+    @include flexer(row, space-between, center);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.left-contact {
+    height: 100%;
+    margin-left: 5vw;
+    width: 40%;
+    position: relative;
+    // border: 1px solid red;
+    padding: 5vw;
+
+    #contact-me-header {
+        // font-family: 'Merienda One', cursive;
+        font-family: 'Henny Penny', cursive;
+        font-size: calc(2rem + 3vw);
+        // color: white;
+        color: $green-tone;
+        // margin: 0 0 4rem 0;
+    }
+
+    #form-wrapper {
+        // border: 1px solid red;
+
+        #name-space,
+        #email-space,
+        #comment-space {
+            display: block;
+            width: 30rem;
+            padding: 1rem;
+            margin: 2rem 0;
+            // border-radius: 1rem;
+            color: rgb(197, 197, 197);
+            // border: 1px solid black;
+            border: none;
+            height: 5rem;
+            // outline: white;
+            background-image: linear-gradient(135deg, rgb(14, 14, 14), rgb(45, 45, 45));
+            box-shadow: inset 3px 3px 5px rgb(14, 14, 14),
+                        inset -3px -3px 5px rgb(60, 60, 60);
+
+            &::placeholder {
+                color: $green-tone;
+                font-family: 'atkinson';
+            }
+
+            &:focus {
+                outline: 1px solid $green-tone;
+            }
+        }
+
+        #comment-space {
+            height: 20rem;
+            resize: none;
+            font-family: 'atkinson';
+        }
+
+        #submit-btn {
+            padding: 1.2rem 3.5rem;
+            width: 30rem;
+            background-image: linear-gradient(135deg, rgb(14, 14, 14), rgb(45, 45, 45));
+            border: 1px solid $green-tone;
+            border-radius: 3rem;
+            // box-shadow: 3px 3px 5px rgb(14, 14, 14),
+            //             -3px -3px 5px rgb(60, 60, 60);
+            color: $green-tone;
+            font-family: 'atkinson';
+            margin-bottom: 2rem;
+        }
+    }
+
+    ul {
+        @include flexer(row, space-between, center);
+        width: 30rem;
+
+        li {
+            list-style: none;
+        }
+
+        .handle {
+            color: rgb(116, 116, 116);
+            font-size: 2rem;
+        }
+    }
+}
+
+.right-contact {
+    height: 100%;
+    width: 55%;
+    @include flexer(row, center, center);
+    // border: 1px solid blue;
+    // position: relative;
+
+    #fly {
+        width: 90%;
+        // transform: translateX(8%);
+    }
+}
+
+
+
+@media (max-width: 700px) {
+    .left-contact {
+        width: 95vw;
+        margin-left: 0;
+        padding: 8vw;
+
+        #contact-me-header {
+            margin-top: 9rem;
+        }
+    }
+    .right-contact {
+        // width: 95%;
+        display: none;
+    }
+}

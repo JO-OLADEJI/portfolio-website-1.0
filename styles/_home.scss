@@ -1,0 +1,290 @@
+$background-color: #1a1a1a;
+$black: #111111;
+$green-tone: #00E676;
+$orange-tone: #FF5722;
+
+.home-content {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #1a1a1a;
+    // background-color: rgb(29, 29, 29);
+    @include flexer(row, space-between, center);
+    overflow: hidden;
+
+    .left-home {
+        height: 100%;
+        margin-left: 5vw;
+        width: 55%;
+        position: relative;
+
+        .wrapper {
+            height: 100%;
+            @include flexer(column, center, space-between);
+        }
+
+        .hello {
+            font-size: calc(2rem + 3vw);
+            font-weight: lighter;
+            font-family: 'Sacramento', cursive;
+            margin-left: 5vw;
+            text-align: left;
+            color: white;
+        }
+
+        .my-name {
+            font-family: 'Merienda One', cursive;
+            font-size: calc(2.2rem + 3vw);
+            margin-left: 5vw;
+            text-align: left;
+            color: white;
+
+            .j {
+                font-family: 'Henny Penny', cursive;
+                font-size: calc(4rem + 3vw);
+                color: $green-tone;
+            }
+
+        }
+
+        #specialty-box {
+            height: 4rem;
+            width: 80%;
+            position: relative;
+            margin-bottom: 3rem;
+            margin-left: 5vw;
+            text-align: left;
+
+            #specialty, #specialty2 {
+                font-size: calc(.7rem + 1vw);
+                font-weight: 200;
+                // color: white;
+                color: rgb(194, 194, 194);
+                // font-family: 'Redressed', cursive;
+                font-family: 'atkinson';
+                // font-family: 'atkinson';
+            }
+        }
+
+        #get-in-touch {
+            display: inline-block;
+            // font-family: 'Open Sans', sans-serif;
+            font-family: 'Redressed', cursive;
+            font-weight: 200;
+            // font-family: 'atkinson';
+            font-size: calc(.6rem + 1vw);
+            // border-radius: 3.5rem;
+            padding: 1.5rem 3rem;
+            text-decoration: none;
+            background-color: $orange-tone;
+            // background-color: black;
+            color: $black;
+            margin-left: 5vw;
+            margin-top: 3rem;
+            width: fit-content;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            z-index: 4;
+
+            &:hover {
+                // box-shadow: 0 8px 8px black;
+                // background-color: rgb(76, 255, 52);
+                background-color: black;
+                color: white;
+                // background-color: white;
+            }
+        }
+    }
+
+    .right-home {
+        height: 100%;
+        width: 40%;
+        // border: 1px solid red;
+        position: relative;
+    }
+}
+
+svg {
+    position: absolute;
+    top:0;
+    left: 0;
+    opacity: .5;
+}
+
+#mouse1 {
+    transform: rotateZ(0deg) translate(150%, 700%);
+}
+#phone1 {
+    transform: rotateZ(30deg) translate(70%, 0%);
+}
+#headphone1 {
+    transform: rotateZ(120deg) translate(-240%, -550%);
+}
+#pencil1 {
+    transform: rotateZ(0deg) translate(400%, 500%);
+}
+#ipad1 {
+    transform: rotateZ(-22deg) translate(-100%, 260%);
+}
+#speaker1 {
+    transform: translate(-30%, 150%);
+}
+#imac1 {
+    transform: rotateZ(30deg) translate(190%, 100%);
+}
+#imac2 {
+    transform: rotateZ(0deg) translate(140%, 100%);
+}
+#mouse2 {
+    transform: translate(750%, 100%);
+}
+#phone2 {
+    transform: rotateZ(-30deg) translate(-400%, 280%);
+}
+#headphone2 {
+    transform: translate(380%, 60%);
+}
+#pencil2 {
+    transform: rotateZ(0deg) translate(0%, 200%);
+}
+#ipad2 {
+    transform: translate(100%, 300%);
+}
+#speaker2 {
+    transform: rotateZ(20deg) translate(550%, 250%);
+}
+#mouse3 {
+    transform: rotateZ(-90deg) translate(-400%, 200%);
+}
+#phone3 {
+    transform: translate(-650%, 150%);
+}
+#headphone3 {
+    transform: translate(-550%, 60%);
+}
+#pencil3 {
+    transform: rotateZ(45deg) translate(-400%, 250%);
+}
+#imac3 {
+    transform: rotateZ(2deg) translate(-10%, -20%);
+}
+#phone4 {
+    transform: rotateZ(15deg) translate(670%, 100%);
+}
+#headphone4 {
+    transform: rotateZ(0deg) translate(-210%, 330%);
+}
+#pencil4 {
+    transform: translate(950%, 650%);
+}
+//animating the svg elements
+#mouse1, #mouse2, #mouse3 {
+    stroke-dasharray: 255;
+    animation: dashMouse 7s ease-in-out forwards infinite alternate-reverse;
+}
+@keyframes dashMouse {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 255;
+    }
+}
+#imac1, #imac2, #imac3 {
+    stroke-dasharray: 1000;
+    animation: dashImac 12s ease-in-out forwards infinite alternate-reverse;
+}
+@keyframes dashImac {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 1000;
+    }
+}
+#ipad1, #ipad2 {
+    stroke-dasharray: 550;
+    animation: dashIpad 8s ease-in-out forwards infinite alternate-reverse;
+}
+@keyframes dashIpad {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 550;
+    }
+}
+#speaker1, #speaker2 {
+    stroke-dasharray: 450;
+    animation: dashSpeaker 10s ease-in-out forwards infinite alternate-reverse;
+}
+@keyframes dashSpeaker {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 450;
+    }
+}
+#pencil1, #pencil2, #pencil3, #pencil4 {
+    stroke-dasharray: 210;
+    animation: dashPencil 4s ease-in-out forwards infinite alternate-reverse;
+}
+@keyframes dashPencil {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 210;
+    }
+}
+#phone1, #phone2, #phone3, #phone4 {
+    stroke-dasharray: 290;
+    animation: dashPhone 5s ease-in-out forwards infinite alternate-reverse;
+}
+@keyframes dashPhone {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 290;
+    }
+}
+#headphone1, #headphone2, #headphone3, #headphone4 {
+    stroke-dasharray: 160;
+    animation: dashHeadphone 7s ease-in-out forwards infinite alternate-reverse;
+}
+@keyframes dashHeadphone {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 160;
+    }
+}
+
+// Media Queries
+// @media screen and (max-width: 430px) {
+//     .left {
+//         margin-left: 30vw;
+//     }
+// }
+@media (max-width: 700px) {
+    .home-content {
+        
+        .left-home {
+            width: 95vw;
+
+            #specialty-box {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .right-home {
+            width: 0;
+        }
+    }
+}
